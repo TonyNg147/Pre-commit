@@ -1,0 +1,14 @@
+repos:
+  - repo: local
+    hooks:
+      - id: clang-format
+        name: Formating text with Clang
+        entry: clang-format -i
+        args: ["-fallback-style=none"]
+        language: python
+        verbose: true
+        description: "This hook ensures that the format of all the files are valid"
+        files: |
+          (?x)(
+            .*
+          )$
